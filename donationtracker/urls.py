@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/', include('jwt_auth.urls')),
     path('', include('charities.urls')),
-    path('', include('donations.urls')),
+    path('donations/', include('donations.urls')),
 ]
