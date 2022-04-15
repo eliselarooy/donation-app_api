@@ -4,6 +4,11 @@ from .serializers import *
 # Create your views here.
 
 
-class DonationListCreate(ListCreateAPIView):
-    queryset = Donation.objects.all()
-    serializer_class = DonationSerializer
+class SingleDonationListCreate(ListCreateAPIView):
+    queryset = SingleDonation.objects.all()
+    serializer_class = SingleDonationSerializer
+
+
+class MonthlyDonationListCreate(ListCreateAPIView):
+    queryset = MonthlyDonation.objects.all()
+    serializer_class = MonthlyDonationSerializer
