@@ -1,8 +1,14 @@
 from rest_framework import serializers
-from .models import Donation
+from .models import *
 
 
-class DonationSerializer(serializers.ModelSerializer):
+class SingleDonationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Donation
+        model = SingleDonation
+        fields = ('__all__')
+
+
+class MonthlyDonationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MonthlyDonation
         fields = ('__all__')
