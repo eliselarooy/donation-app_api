@@ -1,4 +1,3 @@
-from datetime import date
 from django.db import models
 from django.contrib.auth import get_user_model
 from charities.models import Charity
@@ -23,3 +22,6 @@ class Donation(models.Model):
     date = models.DateField()
     frequency = models.CharField(
         choices=options, default=Once, max_length=10)
+
+    def __str__(self):
+        return f"User: {self.user}, Amount: {self.total_amount}, Date: {self.date}"
