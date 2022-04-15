@@ -16,11 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from donations.views import myView
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', myView),
+    path('authentication/', include('jwt_auth.urls')),
     path('', include('charities.urls')),
     path('', include('donations.urls')),
 ]
