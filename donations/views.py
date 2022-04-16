@@ -42,6 +42,11 @@ class SingleDonationRetrieveUpdateDelete(APIView):
 
     def get(self, request, pk):
         single_donation = self.get_single_donation(pk=pk)
+        request.data['user'] = request.user.id
+
+        if request.user != single_donation.user:
+            raise PermissionDenied({'message': 'Invalid credentials'})
+
         serialized_donation = SingleDonationSerializer(single_donation)
 
         return Response(data=serialized_donation.data, status=status.HTTP_200_OK)
@@ -61,6 +66,17 @@ class SingleDonationRetrieveUpdateDelete(APIView):
             return Response(updated_donation.data, status=status.HTTP_200_OK)
 
         return Response(data=updated_donation.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request, pk):
+      donation_to_delete = self.get_single_donation(pk=pk)
+      request.data['user'] = request.user.id
+
+      if request.user != donation_to_delete.user:
+            raise PermissionDenied({'message': 'Invalid credentials'})  
+
+      donation_to_delete.delete()
+
+      return Response(status=status.HTTP_204_NO_CONTENT)   
 
     def get_single_donation(self, pk):
         try:
