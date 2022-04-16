@@ -3,6 +3,7 @@ from .views import *
 
 urlpatterns = [
     path('single/', SingleDonationList.as_view()),
+    path('user/single/', SingleDonationListForUser.as_view()),
     path('single/create/', SingleDonationCreate.as_view()),
     path('single/<int:pk>/',
          SingleDonationRetrieveUpdateDelete.as_view()),

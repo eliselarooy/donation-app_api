@@ -1,7 +1,11 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from charities.models import Charity
+
+# from django.contrib.auth.models import User
 User = get_user_model()
+User._meta.get_field('email')._unique = True
+
 
 # Create your models here.
 
@@ -14,8 +18,8 @@ class SingleDonation(models.Model):
     total_amount = models.DecimalField(max_digits=8, decimal_places=2)
     date = models.DateField()
 
-    def __str__(self):
-        return f"User: {self.user}, Amount: {self.total_amount}, Date: {self.date}"
+    # def __str__(self):
+    #     return f"User: {self.user}, Amount: {self.total_amount}, Date: {self.date}"
 
 
 class MonthlyDonation(models.Model):

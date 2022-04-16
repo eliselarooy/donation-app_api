@@ -1,4 +1,3 @@
-from jwt_auth.serializers import UserSerializer
 from rest_framework.generics import ListAPIView
 from rest_framework import status
 from rest_framework.views import APIView
@@ -14,6 +13,16 @@ from .serializers import *
 class SingleDonationList(ListAPIView):
     queryset = SingleDonation.objects.all()
     serializer_class = SingleDonationSerializer
+
+
+class SingleDonationListForUser(ListAPIView):
+  permission_classes = [IsAuthenticated, ]
+
+  serializer_class = SingleDonationSerializer
+
+  def get_queryset(self):
+      user = self.request.user
+      return SingleDonation.objects.filter(user=user)
 
 
 class MonthlyDonationList(ListAPIView):
