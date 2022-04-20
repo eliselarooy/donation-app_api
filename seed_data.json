@@ -1,0 +1,122 @@
+[
+{
+  "model": "charities.category",
+  "pk": 1,
+  "fields": {
+    "name": "Animals"
+  }
+},
+{
+  "model": "charities.category",
+  "pk": 2,
+  "fields": {
+    "name": "Environment"
+  }
+},
+{
+  "model": "charities.category",
+  "pk": 3,
+  "fields": {
+    "name": "Education"
+  }
+},
+{
+  "model": "charities.category",
+  "pk": 4,
+  "fields": {
+    "name": "Health"
+  }
+},
+{
+  "model": "charities.charity",
+  "pk": 1,
+  "fields": {
+    "name": "WWF",
+    "logo": "https://www.wwf.org.uk/themes/custom/wwf/img/wwf-logo.svg",
+    "website": "https://www.wwf.org.uk/",
+    "description": "WWF is the world’s leading independent conservation organisation. Our mission is to create a world where people and wildlife can thrive together.  To achieve our mission, we're finding ways to help transform the future for the world’s wildlife, rivers, forests and seas; pushing for a reduction in ca",
+    "category": [
+      1
+    ]
+  }
+},
+{
+  "model": "charities.charity",
+  "pk": 2,
+  "fields": {
+    "name": "Brooke",
+    "logo": "https://www.thebrooke.org/sites/all/themes/zen_brooke/images/brooke_logo.svg",
+    "website": "https://www.thebrooke.org/",
+    "description": "We build a safety net made of trained vets, animal health workers and farriers to protect working horses, donkeys and mules from injury, pain and disease. The 1.6 million animals we reach across Africa, Asia, Latin America and the Middle East are a lifeline for their owners",
+    "category": [
+      1
+    ]
+  }
+},
+{
+  "model": "charities.charity",
+  "pk": 3,
+  "fields": {
+    "name": "Cancer Research UK",
+    "logo": "https://www.cancerresearchuk.org/sites/all/themes/custom/cruk/cruk-logo.svg",
+    "website": "https://www.cancerresearchuk.org/",
+    "description": "We fund scientists, doctors and nurses to help beat cancer sooner. We also provide cancer information to the public.",
+    "category": [
+      4
+    ]
+  }
+},
+{
+  "model": "charities.charity",
+  "pk": 4,
+  "fields": {
+    "name": "Children’s Liver Disease Foundation",
+    "logo": "https://childliverdisease.org/wp-content/uploads/2019/04/CLDF-LOGO.png",
+    "website": "https://childliverdisease.org/",
+    "description": "Formed in 1980, Children’s Liver Disease Foundation is the only UK charity dedicated to fighting all childhood liver diseases.",
+    "category": [
+      4
+    ]
+  }
+},
+{
+  "model": "charities.charity",
+  "pk": 5,
+  "fields": {
+    "name": "Blue Marine Foundation",
+    "logo": "https://www.bluemarinefoundation.com/wp-content/themes/bluemarine/img/logo_icon.png",
+    "website": "https://www.bluemarinefoundation.com/about/",
+    "description": "BLUE is filling a niche in the NGO world, enabling marine conservation to happen fast and effectively. What differentiates BLUE is that we are well connected and determined; we seize opportunities as they arise and get things done. We forge new partnerships and challenge the status quo.",
+    "category": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "charities.charity",
+  "pk": 6,
+  "fields": {
+    "name": "BookTrust",
+    "logo": "https://cdn.booktrust.org.uk/globalassets/images/header/booktrust-new-logo.jpg",
+    "website": "https://www.booktrust.org.uk/",
+    "description": "We are the UK's largest reading charity and we reach millions of children every year with books, resources and support to get every child reading, regularly and by choice.  We are national in scale and operate in every region in England, Northern Ireland and Wales. We work through every local author",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "charities.charity",
+  "pk": 7,
+  "fields": {
+    "name": "Save the Children",
+    "logo": "https://www.savethechildren.org.uk/content/dam/gb/images/icons/stc_logo_update.svg",
+    "website": "https://www.savethechildren.org.uk/",
+    "description": "In the UK and around the world, we make sure children keep safe, healthy and learning.",
+    "category": [
+      3
+    ]
+  }
+}
+]
