@@ -155,4 +155,6 @@ REST_FRAMEWORK = {
     ],
 }
 
+AUTH_USER_MODEL = 'jwt_auth.CustomUser'
+
 django_on_heroku.settings(locals())
