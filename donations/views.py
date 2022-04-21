@@ -6,19 +6,20 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import NotFound, PermissionDenied
 from .models import *
 from .serializers import *
+from decimal import *
 
 # Create your views here.
 
 
 class SingleDonationList(ListAPIView):
     queryset = SingleDonation.objects.all()
-    serializer_class = SingleDonationSerializer
+    serializer_class = PopulatedSingleDonationSerializer
 
 
 class SingleDonationListForUser(ListAPIView):
   permission_classes = [IsAuthenticated, ]
 
-  serializer_class = SingleDonationSerializer
+  serializer_class = PopulatedSingleDonationSerializer
 
   def get_queryset(self):
       user = self.request.user
@@ -40,6 +41,8 @@ class SingleDonationCreate(APIView):
             data=request.data)
 
         if single_donation_serializer.is_valid():
+            if Decimal(request.data['total_amount']) <= 0:
+              return Response(data={'message': 'Value must be greater than 0'}, status=status.HTTP_400_BAD_REQUEST)
             single_donation_serializer.save()
             return Response(data=single_donation_serializer.data, status=status.HTTP_201_CREATED)
 

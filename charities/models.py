@@ -13,7 +13,7 @@ class Charity(models.Model):
     name = models.CharField(max_length=200)
     logo = models.CharField(max_length=200)
     website = models.CharField(max_length=200)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=1000)
     category = models.ManyToManyField(Category, related_name='charity', blank=True)
 
     def __str__(self):
