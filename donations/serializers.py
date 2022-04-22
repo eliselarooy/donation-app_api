@@ -1,6 +1,7 @@
+from unicodedata import category
 from rest_framework import serializers
 
-from charities.serializers import CharitySerializer
+from charities.serializers import PopulatedCharitySerializer
 from .models import *
 
 
@@ -16,4 +17,4 @@ class MonthlyDonationSerializer(serializers.ModelSerializer):
         fields = ('__all__')
 
 class PopulatedSingleDonationSerializer(SingleDonationSerializer):
-  charity = CharitySerializer()
+  charity = PopulatedCharitySerializer()
